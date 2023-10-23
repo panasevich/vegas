@@ -1,0 +1,26 @@
+.infiniteScroll {
+  &__list {
+    display: flex;
+    height: calc(100vh - 100px);
+    position: relative;
+  }
+  &__wrapper {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    width: 100%;
+    ::-webkit-scrollbar {
+      width: 4px;
+      height: 4px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: white;
+    }
+  }
+}

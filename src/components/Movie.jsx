@@ -1,26 +1,24 @@
-import { useDispatch, useSelector } from 'react-redux'
-import starredSlice from '../data/starredSlice'
-import watchLaterSlice from '../data/watchLaterSlice'
-import placeholder from '../assets/not-found-500X750.jpeg'
+import { useDispatch, useSelector } from "react-redux";
+import starredSlice from "../data/starredSlice";
+import watchLaterSlice from "../data/watchLaterSlice";
+import placeholder from "../assets/not-found-500X750.jpeg";
 
-const Movie = ({ movie, viewTrailer, closeCard }) => {
+const Movie = ({ movie, viewTrailer }) => {
 
     const state = useSelector((state) => state)
     const { starred, watchLater } = state
     const { starMovie, unstarMovie } = starredSlice.actions
     const { addToWatchLater, removeFromWatchLater } = watchLaterSlice.actions
 
-    const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
-    const myClickHandler = (e) => {
-        if (!e) var e = window.event
-        e.cancelBubble = true
-        if (e.stopPropagation) e.stopPropagation()
-        e.target.parentElement.parentElement.classList.remove('opened')
-    }
+  const myClickHandler = (e) => {
+    if (e.stopPropagation) e.stopPropagation();
+    e.target.parentElement.parentElement.classList.remove("opened");
+  };
 
     return (
-        <div className="wrapper col-3 col-sm-4 col-md-3 col-lg-3 col-xl-2">
+        <div className="wrapper">
         <div className="card" onClick={(e) => e.currentTarget.classList.add('opened')} >
             <div className="card-body text-center">
                 <div className="overlay" />
@@ -69,4 +67,4 @@ const Movie = ({ movie, viewTrailer, closeCard }) => {
     )
 }
 
-export default Movie
+export default Movie;

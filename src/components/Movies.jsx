@@ -1,11 +1,12 @@
 import Movie from './Movie'
 import '../styles/movies.scss'
+import InfiniteScroll from "./infiniteScroll/infiniteScroll";
 
-const Movies = ({ movies, viewTrailer, closeCard }) => {
-
+const Movies = ({ handlePagination, movies, viewTrailer, closeCard }) => {
     return (
-        <div data-testid="movies">
-            {movies.movies.results?.map((movie) => {
+        <InfiniteScroll callback={handlePagination}>
+        <div data-testid="movies" className="movies-list">
+            {movies?.results?.map((movie) => {
                 return (
                     <Movie 
                         movie={movie} 
@@ -16,6 +17,7 @@ const Movies = ({ movies, viewTrailer, closeCard }) => {
                 )
             })}
         </div>
+        </InfiniteScroll>
     )
 }
 

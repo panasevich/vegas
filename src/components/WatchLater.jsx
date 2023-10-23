@@ -10,7 +10,6 @@ const WatchLater = ({viewTrailer}) => {
     const { watchLater } = state
     const { remveAllWatchLater } = watchLaterSlice.actions
     const dispatch = useDispatch()
-
   return (
     <div className="starred" data-testid="watch-later-div">
       {watchLater.watchLaterMovies.length > 0 && (<div data-testid="watch-later-movies" className="starred-movies">
