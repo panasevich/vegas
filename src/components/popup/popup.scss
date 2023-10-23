@@ -1,0 +1,33 @@
+.popup {
+  &__overlay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0, .5);
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    z-index: 99;
+  }
+  &__content {
+    background: #050b45;
+  }
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: #050b45;
+
+    &-title {
+      flex: 1;
+      padding-right: 10px;
+      text-align: left;
+    }
+    button {
+      width: auto;
+    }
+  }
+}
